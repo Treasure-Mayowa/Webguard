@@ -1,0 +1,37 @@
+{
+  "name": "Webguard",
+  "version": "1.2.0",
+  "description": "Webguard helps you read through Privacy Policies and Cookie Policies on websites, ensuring your internet safety.",
+  "manifest_version": 3,
+  "author": "Treasure Mayowa",
+  "homepage_url": "https://linkedin.com/in/treasure-mayowa",
+  "permissions": [
+      "tabs",
+      "activeTab",
+      "storage"
+  ],
+  "icons": {
+      "48" : "logo192.png",
+      "128" : "logo512.png"
+  },
+  "action": { 
+      "default_icon": "logo192.png",
+      "default_popup": "index.html",
+      "default_title": "Webguard"
+  },
+  "background": {
+      "service_worker": "background/background.js"
+      },
+  "content_scripts": [
+      {
+          "matches": ["<all_urls>"],
+          "js": ["background/content_scripts.js"]
+      }
+  ],
+  "options_page": "options/options.html",
+
+    "options_ui": {
+        "page": "options/options.html",
+        "open_in_tab": false
+      }
+}
